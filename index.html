@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>เฉลย คณิตศาสตร์ ป.3</title>
+<meta name="theme-color" content="#5b2a86">
+<meta name="description" content="เปิดเฉลยคณิตศาสตร์ ป.3 ได้เร็ว กรอกเลขหน้าเพื่อกระโดดไปหน้าที่ต้องการ">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="เฉลย ป.3">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">ค</span>
+    <span class="brand-text">
+      <strong>เฉลยคณิตศาสตร์ ป.3</strong>
+      <small id="bookTitle">เล่ม 1</small>
+    </span>
+  </div>
+  <div class="top-actions">
+    <button class="install-btn" id="installBtn" type="button" hidden title="ติดตั้งแอป">
+      <span aria-hidden="true">⤓</span><span class="install-label">ติดตั้งแอป</span>
+    </button>
+    <div class="book-switch" id="bookSwitch" role="tablist" aria-label="เลือกเล่ม"></div>
+  </div>
+</header>
+
+<nav class="jumpbar" aria-label="ไปยังหน้า">
+  <button class="nav-btn" id="prevBtn" type="button" title="หน้าก่อน (←)" aria-label="หน้าก่อน">‹</button>
+  <form class="jump" id="jumpForm" autocomplete="off">
+    <label for="pageInput">หน้า</label>
+    <input id="pageInput" type="text" inputmode="numeric" pattern="[0-9]*"
+           maxlength="4" aria-label="เลขหน้า" placeholder="—" enterkeyhint="go">
+    <span class="of" id="ofTotal">/ 1</span>
+    <button type="submit" class="go">ไป</button>
+  </form>
+  <button class="nav-btn" id="nextBtn" type="button" title="หน้าถัดไป (→)" aria-label="หน้าถัดไป">›</button>
+</nav>
+
+<div class="chapters" id="chapters" aria-label="บทเรียน"></div>
+
+<main class="stage" id="stage">
+  <div class="page-wrap" id="pageWrap">
+    <img id="pageImg" alt="หน้าเฉลย" draggable="false" decoding="async">
+  </div>
+  <div class="spinner" id="spinner" hidden aria-hidden="true"></div>
+  <div class="empty" id="empty" hidden>ไม่พบรูปหน้านี้</div>
+</main>
+
+<footer class="statusbar">
+  <button class="ghost" id="gridBtn" type="button" title="ดูภาพรวมทุกหน้า (G)">
+    <span aria-hidden="true">▦</span><span class="lbl"> สารบัญภาพ</span>
+  </button>
+  <span class="pageinfo" id="pageInfo">หน้า 1 / 1</span>
+  <div class="zoom" role="group" aria-label="ย่อขยาย">
+    <button class="ghost" id="zoomOut" type="button" title="ย่อ" aria-label="ย่อ">−</button>
+    <button class="ghost" id="zoomFit" type="button" title="ขนาดพอดี">พอดี</button>
+    <button class="ghost" id="zoomIn" type="button" title="ขยาย" aria-label="ขยาย">+</button>
+  </div>
+</footer>
+
+<div class="modal" id="gridModal" hidden>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-label="สารบัญภาพ">
+    <div class="modal-head">
+      <strong id="gridTitle">สารบัญภาพ</strong>
+      <span class="modal-hint">แตะเพื่อไปหน้านั้น</span>
+      <button class="ghost close" id="gridClose" type="button" aria-label="ปิด">✕</button>
+    </div>
+    <div class="modal-body" id="gridBody"></div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# ไฟล์ชั่วคราว/ทดสอบ
+_test/
+build*.log
+__pycache__/
+*.pyc
+.DS_Store
